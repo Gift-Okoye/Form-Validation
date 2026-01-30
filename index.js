@@ -98,6 +98,15 @@ function checkPassword() {
     }
 }
 
+// Enable button
+function enableButton() {
+    if (emailInput.value !== "" && passwordInput.value !== "") {
+        btn.disabled = false
+    } else {
+        btn.disabled = true
+    }
+}
+
 
 
 
