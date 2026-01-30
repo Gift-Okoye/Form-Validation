@@ -100,12 +100,25 @@ function checkPassword() {
 
 // Enable button
 function enableButton() {
-    if (emailInput.value !== "" && passwordInput.value !== "") {
+    const isEmailValid = emailInput.className === "valid"
+    const isPasswordValid = r1.className.includes("ok") && r2.className.includes("ok") && r3.className.includes("ok") && r4.className.includes("ok")
+
+    if (isEmailValid && isPasswordValid) {
         btn.disabled = false
     } else {
         btn.disabled = true
     }
 }
+
+emailInput.addEventListener("input", function () {
+    checkEmail();
+    enableButton();
+})
+
+passwordInput.addEventListener("input", function () {
+    checkPassword();
+    enableButton();
+})
 
 
 
